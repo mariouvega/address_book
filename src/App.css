@@ -1,8 +1,5 @@
 .App {
   font-size: 16px;
-  margin: auto;
-  border-radius: 3px;
-  /*width: 90%;*/
   background-image: linear-gradient(to right top, #845ec2, #d65db1, #ff6491, #ff9671);
   /*background-image: url('https://images.pexels.com/photos/205414/pexels-photo-205414.jpeg?cs=srgb&dl=address-book-black-and-white-business-205414.jpg&fm=jpg');*/
   /*background-size: cover;*/
@@ -10,9 +7,10 @@
 }
 
 .title {
-  padding-top: 1em;
+  padding: 1em;
   color: white;
   text-align: center;
+  margin: 0;
 }
 .addressForm {
   margin: auto;
@@ -20,6 +18,8 @@
   border-radius: 3px;
   background-image: linear-gradient(to right, #207ed2, #0091d5, #00a0cf, #00aec3, #1fb9b4);
   padding: 20px;
+  box-shadow: 5px 5px 15px #725394;
+  margin-bottom: 1.5em;
 }
 
 .formFeild {
@@ -45,6 +45,12 @@
 
 .contactBook {
   background-color: #e0edf0;
+  min-height: 200px;
+  padding: 1em;
+  max-width: 90%;
+  margin: 1em auto;
+  border-radius: 3px;
+  box-shadow: 5px 5px 15px #725394;
 }
 
 .listTitle {
@@ -56,10 +62,15 @@
   color: #6f6c6c;
   background-color: white;
   border-bottom: 1px solid #d3d7d8;
-  padding: .5em;
-  margin-bottom: .3em;
-  width: 93%; 
+  padding: 12px;
+  margin: .5em auto;
+  border-radius: 100px;
+}
 
+.btns {
+  display: inline-block;
+  margin-left: auto;
+  margin-right: 0;
 }
 
 .listBtn {
@@ -71,6 +82,7 @@
   display: inline-block;
   height: auto;
   width: auto;
-  margin: 3px 5px;
+  margin: 4px 8px;
+  margin-right: 0px;
   padding: .5em .8em
 }
