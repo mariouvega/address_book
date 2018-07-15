@@ -12,7 +12,8 @@ class App extends Component {
       title: 'Address Book',
       contacts: [],
       act: 0,
-      index: ''
+      index: '',
+      removing: 0
     }
   }
 
@@ -50,6 +51,7 @@ class App extends Component {
     this.refs.name.focus()
   }
 
+  // ADD A CANCEL BUTTON UNDERNEATH UPDATE BUTTON //
   editContact(i){
     let contact = this.state.contacts[i]
     this.refs.name.value = contact.name
@@ -68,7 +70,8 @@ class App extends Component {
     let contacts = this.state.contacts
     contacts.splice(i,1)
     this.setState({
-      contacts: contacts
+      contacts: contacts,
+      removing: 1
     })
 
     this.refs.addressForm.reset()
@@ -86,13 +89,15 @@ class App extends Component {
         <form ref="addressForm" className="addressForm">
           <input type="text" ref="name" placeholder="Enter Name" className="formFeild" />
           <input type="text" ref="address" placeholder="Enter Address" className="formFeild" />
-          <button onClick={this.submitContact} className="submissionBtn">Add Contact</button>
+          <button onClick={this.submitContact} className="submissionBtn">{this.state.act === 0 ? 'Add Contact' : 'Update'}</button>
         </form>
         <ul className="contactBook">
           <h3 className="listTitle">Contacts:</h3>
           {contacts.map((contact, i) => 
-            <li key={i} className="contactsList">
-              {contact.name}, {contact.address}
+            <li key={i} className={"contactsList " + (this.state.removing === 1 ? 'removing' : '')}>
+              <div className="contactInfo">
+                {contact.name}, {contact.address}
+              </div>
               <div className="btns">
                 <button onClick={this.editContact.bind(null, i)} className="listBtn">Edit Contact</button>
                 <button onClick={this.deleteContact.bind(null, i)} className="listBtn">Remove Contact</button>
