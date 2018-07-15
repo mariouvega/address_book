@@ -92,12 +92,11 @@ class App extends Component {
           <h3 className="listTitle">Contacts:</h3>
           {contacts.map((contact, i) => 
             <li key={i} className="contactsList">
-            {contact.name}, 
-            {contact.address} 
-            <div className="btns">
-              <button onClick={this.editContact.bind(null, i)} className="listBtn">Edit Contact</button>
-              <button onClick={this.deleteContact.bind(null, i)} className="listBtn">Remove Contact</button>
-            </div>
+              {contact.name}, {contact.address}
+              <div className="btns">
+                <button onClick={this.editContact.bind(null, i)} className="listBtn">Edit Contact</button>
+                <button onClick={this.deleteContact.bind(null, i)} className="listBtn">Remove Contact</button>
+              </div>
             </li>
             )}
         </ul>
