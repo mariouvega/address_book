@@ -1,8 +1,9 @@
 .App {
-  /*font-size: 16px;*/
+  font-size: 16px;
   /*background-image: linear-gradient(to right top, #845ec2, #d65db1, #ff6491, #ff9671);*/
   /*background-image: url('https://images.pexels.com/photos/205414/pexels-photo-205414.jpeg?cs=srgb&dl=address-book-black-and-white-business-205414.jpg&fm=jpg');*/
   /*background-size: cover;*/
+  min-height: 1080px;
 }
 
 .title {
