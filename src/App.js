@@ -82,19 +82,21 @@ class App extends Component {
 
     return (
       <div className="App">
-        <h1>{this.state.title}</h1>
+        <h1 className="title">{this.state.title}</h1>
         <form ref="addressForm" className="addressForm">
           <input type="text" ref="name" placeholder="Enter Name" className="formFeild" />
           <input type="text" ref="address" placeholder="Enter Address" className="formFeild" />
           <button onClick={this.submitContact} className="submissionBtn">Add Contact</button>
         </form>
-        <ul>
+        <ul className="contactBook">
+          <h3 className="listTitle">Contacts:</h3>
           {contacts.map((contact, i) => 
-            <li key={i} className="contacstList">
-            {contact.name},
-            {contact.address} 
-            <button onClick={this.editContact.bind(null, i)}>Edit Contact</button>
-            <button onClick={this.deleteContact.bind(null, i)}>Remove Contact</button>
+            <li key={i} className="contactsList">
+              {contact.name}, {contact.address}
+              <div className="btns">
+                <button onClick={this.editContact.bind(null, i)} className="listBtn">Edit Contact</button>
+                <button onClick={this.deleteContact.bind(null, i)} className="listBtn">Remove Contact</button>
+              </div>
             </li>
             )}
         </ul>
