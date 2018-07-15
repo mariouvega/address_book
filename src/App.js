@@ -94,7 +94,7 @@ class App extends Component {
         <ul className="contactBook">
           <h3 className="listTitle">Contacts:</h3>
           {contacts.map((contact, i) => 
-            <li key={i} className={"contactsList " + (this.state.removing === 1 ? 'removing' : '')}>
+            <li key={i} className="contactsList ">
               <div className="contactInfo">
                 {contact.name}, {contact.address}
               </div>
