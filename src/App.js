@@ -1,5 +1,12 @@
 import React, { Component } from 'react';
 import './App.css';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faStroopwafel } from '@fortawesome/free-solid-svg-icons';
+import { faCoffee } from '@fortawesome/free-solid-svg-icons'
+
+library.add(faStroopwafel)
+
 
 class App extends Component {
 
@@ -89,7 +96,7 @@ class App extends Component {
         <form ref="addressForm" className="addressForm">
           <input type="text" ref="name" placeholder="Enter Name" className="formFeild" />
           <input type="text" ref="address" placeholder="Enter Address" className="formFeild" />
-          <button onClick={this.submitContact} className="submissionBtn">{this.state.act === 0 ? 'Add Contact' : 'Update'}</button>
+          <button onClick={this.submitContact} className="submissionBtn"><FontAwesomeIcon icon={faCoffee} />{this.state.act === 0 ? 'Add Contact' : 'Update'}</button>
         </form>
         <ul className="contactBook">
           <h3 className="listTitle">Contacts:</h3>
